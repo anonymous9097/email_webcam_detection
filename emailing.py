@@ -1,10 +1,14 @@
 import smtplib
 import imghdr
 from email.message import EmailMessage
+import os
+from dotenv import load_dotenv
 
-SENDER = "appd6087.datia@gmail.com"
-PASSWORD = "oaoidiinchnxigpn"
-RECEIVER = "appd6087.datia@gmail.com"
+load_dotenv()
+
+SENDER = os.getenv('USER_EMAIL')
+PASSWORD = os.getenv('PASSWORD')
+RECEIVER = os.getenv('USER_EMAIL')
 
 
 def send_email(image_path):
